@@ -1,0 +1,12 @@
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.5.0
+  - aave/aave-v3-core@1.15.0
+compiler:
+  solc:
+    version: 0.8.10
+    optimizer:
+        enabled: true
+        runs: 200
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.5.0'
+      - '@aave-core-v3=aave/aave-v3-core@1.15.0'
