@@ -48,12 +48,19 @@ contract testflashloan is FlashLoanSimpleReceiverBase, Ownable {
     
   }
 
+  function changeTokenAddress(address _newToken) public {
+      kovanDAI = _newToken;
+  }
+
+
+
   function withdraw() public payable onlyOwner {
         
-        // withdraw all ETH
-        msg.sender.call{ value: address(this).balance }("");
+        // // withdraw all ETH
+        // msg.sender.call{ value: address(this).balance }("");
         
         // withdraw all x ERC20 tokens
         IERC20(kovanDAI).transfer(msg.sender, IERC20(kovanDAI).balanceOf(address(this)));
     }
+    
 }
